@@ -42,7 +42,6 @@ class ElizaServerTest {
     fun onChat() {
         val latch = CountDownLatch(4)
         val list = mutableListOf<String>()
-
         val client = ElizaOnOpenMessageHandlerToComplete(list, latch)
         container.connectToServer(client, URI("ws://localhost:$port/eliza"))
         latch.await()
